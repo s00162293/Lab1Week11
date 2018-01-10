@@ -1,10 +1,21 @@
-﻿enable-migrations -ContextTypeName Lab1Week11.Models.ApplicationDbContext -MigrationsDirectory Migrations\ApplicationUsers
+﻿Lab1Week11.Models.ClubModel, Lab1Week11.Models.ApplicationDbContext
+
+enable-migrations -ContextTypeName Lab1Week11.Models.ApplicationDbContext -MigrationsDirectory Migrations\ApplicationUsers
+enable-migrations -ContextTypeName Lab1Week11.Models.ClubModel -MigrationsDirectory Migrations\ApplicationUsers
 
 
-add-migration -ConfigurationTypeName Rad301ClubsV1.Migrations.Configuration
 
-update-database -ConfigurationTypeName Rad301ClubsV1.Migrations.Configuration
 
-add-migration -ConfigurationTypeName Rad301ClubsV1.Migrations.ClubModelMigrations.Configuration
 
-update-database -ConfigurationTypeName Rad301ClubsV1.Migrations.ClubModelMigrations.Configuration
+//for application db
+Lab1Week11.Migrations.ApplicationUsers -- from namspaces
+
+add-migration -ConfigurationTypeName Lab1Week11.Migrations.ApplicationUsers.Configuration
+update-database -ConfigurationTypeName Lab1Week11.Migrations.ApplicationUsers.Configuration
+
+
+//club context
+Lab1Week11.Migrations.ClubContext
+
+add-migration -ConfigurationTypeName Lab1Week11.Migrations.ClubContext.Configuration
+update-database -ConfigurationTypeName Lab1Week11.Migrations.ClubContext.Configuration
